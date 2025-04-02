@@ -3,12 +3,15 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixvim.url = "github:nix-community/nixvim";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixvim, flake-parts, ... }@inputs:
+    { nixpkgs, nixvim, flake-parts, ... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -23,11 +26,11 @@
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
           nixvimModule = {
-            inherit system; # or alternatively, set `pkgs`
+            inherit pkgs; # or alternatively, set `pkgs`
             module = import ./config; # import the module directly
             # You can use `extraSpecialArgs` to pass additional arguments to your module files
             extraSpecialArgs = {
-              # inherit (inputs) foo;
+                inherit inputs system;
             };
           };
           nvim = nixvim'.makeNixvimWithModule nixvimModule;
@@ -38,9 +41,12 @@
             default = nixvimLib.check.mkTestDerivationFromNixvimModule nixvimModule;
           };
 
-          packages = {
-            # Lets you run `nix run .` to start nixvim
-            default = nvim;
+          packages.default = nvim;
+
+           devShells.default =
+            with pkgs;
+            mkShell {
+              inherit (self'.checks.pre-commit-check) shellHook;
           };
         };
     };
