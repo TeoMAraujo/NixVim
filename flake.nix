@@ -7,11 +7,16 @@
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
+     pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+      
     };
   };
 
   outputs =
-    { nixpkgs, nixvim, flake-parts, ... }@inputs:
+    { nixpkgs, nixvim, flake-parts, pre-commit-hooks,... }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
@@ -21,7 +26,7 @@
       ];
 
       perSystem =
-        { system, pkgs, self', lib, ... }:
+        { system, ... }:
         let
           nixvimLib = nixvim.lib.${system};
           nixvim' = nixvim.legacyPackages.${system};
