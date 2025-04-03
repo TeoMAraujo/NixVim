@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       flavour = "mocha";
-      no_bold = true;
+      no_bold = false;
       no_italic = false;
       no_underline = false;
     };

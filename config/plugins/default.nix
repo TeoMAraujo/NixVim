@@ -17,5 +17,6 @@
     ./lualine
     ./themes
     ./treesitter
+    ./telescope
   ];
 }
