@@ -14,5 +14,4 @@
  #         installCargo = true;
         };
       };
-    };
-}
+    }
