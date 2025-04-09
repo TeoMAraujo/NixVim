@@ -21,7 +21,7 @@
         end
       '';
       options = {
-        desc = "Find all files";
+        desc = "Find files";
         silent = true;
       };
     }
@@ -36,9 +36,9 @@
         end
       '';
       options = {
-        desc = "Find words in all files";
+        desc = "live_grep";
         silent = true;
-      };
+      };#
     }
     {
       mode = "n";

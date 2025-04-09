@@ -35,12 +35,43 @@
             gitsigns = true;
             nvimtree = true;
             treesitter = true;
-            notify = false;
             mini = {
                 enabled = true;
-                indentscope_color = "";  
-         };
-    }; ## For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+                indentscope_color = "";
+            };
+            aerial = true;
+            alpha = true;
+            dashboard = true;
+            grug_far = true;
+            headlines = true;
+            illuminate = true;
+            indent_blankline = true ;
+            leap = true;
+            lsp_trouble = true;
+            mason = true;
+            markdown = true;
+            native_lsp = {
+              enabled = true;
+              underlines = {
+                errors = [ "undercurl" ];
+                hints = [ "undercurl" ];
+                warnings = [ "undercurl" ];
+                information = [ "undercurl" ];
+              };
+            };
+             navic = {
+                enabled = true; 
+                custom_bg = ["lualine"];
+                };
+            neotest = true;
+             neotree = true;
+            noice = true;
+             notify = false;
+            semantic_tokens = true;
+            snacks = true;
+            treesitter_context = true;
+             which_key = true;
+          }; ## For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
 
     # Background
       background = { # :h background

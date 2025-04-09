@@ -18,9 +18,9 @@
       number = true;
       relativenumber = true;
 
-      # Set tabs to 2 spaces
+      # Set tabs to 4 spaces
       tabstop = 4;
-      softtabstop = 2;
+      softtabstop = 4;
       showtabline = 0;
       expandtab = true;
 
@@ -31,7 +31,6 @@
       # Text wrap
       wrap = true;
 
-      # Well written code doesn't need folding
       foldenable = true;
 
       # Wrapped lines will continue visually indented
@@ -41,8 +40,6 @@
       splitbelow = true;
       splitright = true;
 
-      # Why tf 'a' enables the mouse
-      #mouse = "a";
 
       # Keeps at least 8 lines above/bellow cursor except on start/end
       scrolloff = 9;
@@ -52,7 +49,7 @@
       smartcase = true;
 
       # Autosaving when nothing is typed after some milliseconds
-      #updatetime = ;
+      updatetime = 50000000;
 
       # Auto complete options
       completeopt = [
