@@ -1,3 +1,4 @@
+{ 
     plugins.lsp = {
       enable = true;
 
@@ -8,9 +9,10 @@
           enable = true;
           settings.telemetry.enable = false;
         };
-        rust-analyzer = {
-          enable = true;
-          installCargo = true;
+ #       rust-analyzer = {
+ #         enable = true;
+ #         installCargo = true;
         };
       };
     };
+}

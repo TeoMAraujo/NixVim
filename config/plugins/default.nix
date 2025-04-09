@@ -48,7 +48,7 @@
 #    ./nui.nvim
 #    ./mini
 #    ./snacks.nvim
-    ./cmp
+#   ./cmp
    #UTIL
     ./telescope #find files, live grep, old files
 #    ./dirbuf # ou oil
