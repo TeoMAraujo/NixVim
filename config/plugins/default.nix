@@ -34,6 +34,7 @@
    #LSP
 #    ./mason-lspconfig
 #    ./lspconfig
+     ./lsp
    #SYNTHAX
     ./colorizer #highlights hue
     ./treesitter #better synthax higlightning
@@ -47,6 +48,7 @@
 #    ./nui.nvim
 #    ./mini
 #    ./snacks.nvim
+    ./cmp
    #UTIL
     ./telescope #find files, live grep, old files
 #    ./dirbuf # ou oil
