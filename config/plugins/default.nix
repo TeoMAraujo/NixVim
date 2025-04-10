@@ -41,7 +41,7 @@
 #    ./nvim-treesitter-textobjects
 #    ./nvim-ts-autotag
    #UI 
-    ./bufferline
+#    ./bufferline
     ./lualine #adds a line showing stats
 #    ./noice
 #    ./mini.icons
