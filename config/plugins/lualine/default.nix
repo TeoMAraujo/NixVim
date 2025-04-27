@@ -14,28 +14,7 @@ in
             left = "";
             right = "";
           };
-          theme = {
-            normal = {
-              a = {
-                bg = "nil";
-              };
-              b = {
-                bg = "nil";
-              };
-              c = {
-                bg = "nil";
-              };
-              x = {
-                bg = "nil";
-              };
-              y = {
-                bg = "nil";
-              };
-              z = {
-                bg = "nil";
-              };
-            };
-          };
+          theme = "catppuccin";
           disabled_filetypes = {
             statusline = [
               "dashboard"
