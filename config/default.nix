@@ -6,7 +6,7 @@
 
     ./plugins/autopairs.nix  
     ./plugins/bufferline.nix    
-    ./plugins/colorizer
+    ./plugins/colorizer.nix
     ./plugins/comment.nix
     ./plugins/comment-box.nix
     ./plugins/conform.nix

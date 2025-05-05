@@ -17,7 +17,7 @@
       register = "unnamedplus";
     };
 
-    globalOpts = {
+    opts = {
         # keymap
         globals.mapleader = " ";
 
@@ -123,7 +123,6 @@ diagnostics = {
     W.bang = true;
   };
 
-  globals.mapleader = " ";
 
   autoCmd = [
     {
