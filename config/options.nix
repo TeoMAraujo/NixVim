@@ -1,21 +1,13 @@
 {self, ...}: {
-  config = {
-    performance = {
-      byteCompileLua = {
-        enable = true;
-        nvimRuntime = true;
-        configs = true;
-        plugins = true;
-      };
-    };
-
-    clipboard = {
-      providers = {
-        wl-copy.enable = true; # Wayland 
-        xsel.enable = true; # For X11
-      };
-      register = "unnamedplus";
-    };
+    # config = {
+    # performance = {
+    # byteCompileLua = {
+        # enable = true;
+        # nvimRuntime = true;
+        # configs = true;
+        # plugins = true;
+        # };
+    #    };
 
     opts = {
         # keymap
@@ -95,41 +87,51 @@
     # Global substitution by default
     gdefault = false;
 
+        clipboard = {
+            providers = {
+            wl-copy.enable = true; # Wayland 
+            xsel.enable = true; # For X11
+            };
+        register = "unnamedplus";
+        };
+
+
    
         # Set encoding
         encoding = "utf-8";
         fileencoding = "utf-8";
-
-
-diagnostics = {
-    update_in_insert = true;
-    severity_sort = true;
-    float = {
-      border = "rounded";
-    };
-    jump = {
-      severity.__raw = "vim.diagnostic.severity.WARN";
-    };
-  };
-
-  userCommands = {
-    Q.command = "q";
-    Q.bang = true;
-    Wq.command = "q";
-    Wq.bang = true;
-    WQ.command = "q";
-    WQ.bang = true;
-    W.command = "q";
-    W.bang = true;
-  };
-
-
-  autoCmd = [
-    {
-      event = [ "VimEnter" ];
-      callback = { __raw = "function() if vim.fn.argv(0) == '' then require('telescope.builtin').find_files() end end"; };
+        };
     }
-  ];
+
+            #diagnostics = {
+            #update_in_insert = true;
+            #severity_sort = true;
+ #   float = {
+ #     border = "rounded";
+ #   };
+ #   jump = {
+ #     severity.__raw = "vim.diagnostic.severity.WARN";
+ #   };
+ # };
+#
+ # userCommands = {
+  #  Q.command = "q";
+   # Q.bang = true;
+    #Wq.command = "q";
+   # Wq.bang = true;
+   # WQ.command = "q";
+   # WQ.bang = true;
+   # W.command = "q";
+   # W.bang = true;
+  #};
+
+
+  #autoCmd = [
+   # {
+    #  event = [ "VimEnter" ];
+     # callback = { __raw = "function() if vim.fn.argv(0) == '' then require('telescope.builtin').find_files() end end"; };
+    #}
+  #];
   #autoCmd = [
   #  {
   #    event = [ "BufEnter" "BufWinEnter" ];
@@ -138,13 +140,12 @@ diagnostics = {
   #  }
   #];
 
-  highlight = {
-    Comment.fg = "#ff00ff";
-    Comment.bg = "#000000";
-    Comment.underline = true;
-    Comment.bold = true;
-  };
-    };
-  };
-}
+  #highlight = {
+  #  Comment.fg = "#ff00ff";
+   # Comment.bg = "#000000";
+   # Comment.underline = true;
+   # Comment.bold = true;
+  #}#;
+   # };
+ # };
 

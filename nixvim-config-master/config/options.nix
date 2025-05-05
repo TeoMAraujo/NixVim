@@ -26,7 +26,7 @@
 
     list = true;
     # NOTE: .__raw here means that this field is raw lua code
-    listchars.__raw = "{ tab = ' ▏▏', trail = '·', nbsp = '␣' }";
+    listchars.__raw = "{ tab = '» ', trail = '·', nbsp = '␣' }";
 
     # System clipboard support, needs xclip/wl-clipboard
     clipboard = {
