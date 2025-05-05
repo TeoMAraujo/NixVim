@@ -1,4 +1,10 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   plugins.telescope = {
     enable = true;
     extensions = {
@@ -8,7 +14,17 @@
     };
     settings = {
       defaults = {
-        vimgrep_arguments = [ "${pkgs.ripgrep}/bin/rg" "-L" "--color=never" "--no-heading" "--with-filename" "--line-number" "--column" "--smart-case" "--fixed-strings" ];
+        vimgrep_arguments = [
+          "${pkgs.ripgrep}/bin/rg"
+          "-L"
+          "--color=never"
+          "--no-heading"
+          "--with-filename"
+          "--line-number"
+          "--column"
+          "--smart-case"
+          "--fixed-strings"
+        ];
         selection_caret = "  ";
         entry_prefix = "  ";
         layout_strategy = "flex";
@@ -18,7 +34,14 @@
           };
         };
         sorting_strategy = "ascending";
-        file_ignore_patterns = [ "^.git/" "^.mypy_cache/" "^__pycache__/" "^output/" "^data/" "%.ipynb" ];
+        file_ignore_patterns = [
+          "^.git/"
+          "^.mypy_cache/"
+          "^__pycache__/"
+          "^output/"
+          "^data/"
+          "%.ipynb"
+        ];
         set_env.COLORTERM = "truecolor";
       };
 
@@ -28,16 +51,17 @@
         };
       };
     };
-        keymaps = [
-            {
-                action = "<cmd>Telescope live_grep<CR>";
-                key = "<C-l>";
-            }
-            {
-                action = "<cmd>Telescope find_files<CR>";
-                key = "<C-l>";
-            }
-        ];
-  }; 
+  };
   extraPackages = with pkgs; [ ripgrep ];
+
+  keymaps = [
+    {
+      action = "<cmd>Telescope live_grep<CR>";
+      key = "<C-p>";
+    }
+    {
+      action = "<cmd>Telescope find_files<CR>";
+      key = "<C-l>";
+    }
+  ];
 }
