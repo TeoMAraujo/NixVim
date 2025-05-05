@@ -3,7 +3,7 @@ let
 in
 {
   plugins = {
-    web-devicons.enable = true;
+    web-devicons.enable = true; #icons for each tab
     lualine = {
       enable = true;
       settings = {

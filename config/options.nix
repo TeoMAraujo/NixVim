@@ -1,4 +1,4 @@
-{
+{self, ...}: {
   config = {
     performance = {
       byteCompileLua = {
@@ -10,19 +10,34 @@
     };
 
     clipboard = {
+      providers = {
+        wl-copy.enable = true; # Wayland 
+        xsel.enable = true; # For X11
+      };
       register = "unnamedplus";
-      providers.wl-copy.enable = true;
     };
 
-    opts = {
-      number = true;
-      relativenumber = true;
+    globalOpts = {
+        # keymap
+        globals.mapleader = " ";
 
-      # Set tabs to 4 spaces
-      tabstop = 4;
-      softtabstop = 4;
-      showtabline = 0;
-      expandtab = true;
+        #visual vertical line
+        signcolumn = "yes";
+        number = true;
+        relativenumber = true;
+        
+        # Keeps at least 8 lines above/bellow cursor except on start/end
+        scrolloff = 9;
+        
+        # visual for TAB
+        list = true;
+        listchars.__raw = "{ tab = ' ▏'}";
+ 
+        # Set TAB to 4 spaces
+        tabstop = 4;
+        softtabstop = 4;
+        showtabline = 0;
+        expandtab = true;
 
       # 2 spaces auto indent
       smartindent = true;
@@ -40,16 +55,9 @@
       splitbelow = true;
       splitright = true;
 
-
-      # Keeps at least 8 lines above/bellow cursor except on start/end
-      scrolloff = 9;
-
       # Better searching
       ignorecase = true;
       smartcase = true;
-
-      # Autosaving when nothing is typed after some milliseconds
-      updatetime = 50000000;
 
       # Auto complete options
       completeopt = [
@@ -70,13 +78,74 @@
       # Mapped sequence timeout in milliseconds
       timeoutlen = 50;
 
-      encoding = "utf-8";
-      fileencoding = "utf-8";
+      # Autosaving when nothing is typed after some milliseconds
+      updatetime = 50;
 
       # More space in the command line for displaying messages
       cmdheight = 0;
 
-      showmode = false;
+        showmode = false;
+ 
+# Highlight the current line for cursor
+    cursorline = true;
+
+    # Show line and column when searching
+    ruler = true;
+
+    # Global substitution by default
+    gdefault = false;
+
+   
+        # Set encoding
+        encoding = "utf-8";
+        fileencoding = "utf-8";
+
+
+diagnostics = {
+    update_in_insert = true;
+    severity_sort = true;
+    float = {
+      border = "rounded";
+    };
+    jump = {
+      severity.__raw = "vim.diagnostic.severity.WARN";
+    };
+  };
+
+  userCommands = {
+    Q.command = "q";
+    Q.bang = true;
+    Wq.command = "q";
+    Wq.bang = true;
+    WQ.command = "q";
+    WQ.bang = true;
+    W.command = "q";
+    W.bang = true;
+  };
+
+  globals.mapleader = " ";
+
+  autoCmd = [
+    {
+      event = [ "VimEnter" ];
+      callback = { __raw = "function() if vim.fn.argv(0) == '' then require('telescope.builtin').find_files() end end"; };
+    }
+  ];
+  #autoCmd = [
+  #  {
+  #    event = [ "BufEnter" "BufWinEnter" ];
+  #    pattern = [ "*.md" "*.mdx" ];
+  #    command = "MarkdownPreviewToggle";
+  #  }
+  #];
+
+  highlight = {
+    Comment.fg = "#ff00ff";
+    Comment.bg = "#000000";
+    Comment.underline = true;
+    Comment.bold = true;
+  };
     };
   };
 }
+
