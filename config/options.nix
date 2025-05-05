@@ -11,7 +11,7 @@
 
     opts = {
         # keymap
-        globals.mapleader = " ";
+        #globals.mapleader = " ";
 
         #visual vertical line
         signcolumn = "yes";
