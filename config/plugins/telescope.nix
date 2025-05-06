@@ -57,11 +57,11 @@
   keymaps = [
     {
       action = "<cmd>Telescope live_grep<CR>";
-      key = "<C-p>";
+      key = "<C-S-p>";
     }
     {
       action = "<cmd>Telescope find_files<CR>";
-      key = "<C-l>";
+      key = "<C-p>";
     }
   ];
 }
