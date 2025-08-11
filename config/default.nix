@@ -4,8 +4,8 @@
     ./options.nix
     ./keymappings.nix
 
-    ./plugins/autopairs.nix  
-    ./plugins/bufferline.nix    
+    ./plugins/autopairs.nix
+    ./plugins/bufferline.nix
     ./plugins/colorizer.nix
     ./plugins/comment.nix
     ./plugins/comment-box.nix
@@ -22,6 +22,7 @@
     ./plugins/treesitter.nix
     ./plugins/trouble.nix
     ./plugins/trunk.nix
+    ./plugins/mini.nix
 
     ./plugins/themes
     ./plugins/lualine
